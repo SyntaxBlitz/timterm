@@ -17,3 +17,7 @@ minecraft net.syntaxblitz.TimTerm.commands.Minecraft
 rsmap net.syntaxblitz.TimTerm.commands.RuneScapeMap
 yt net.syntaxblitz.TimTerm.commands.YouTube
 youtube net.syntaxblitz.TimTerm.commands.YouTube
+steam net.syntaxblitz.TimTerm.commands.Steam
+csgo net.syntaxblitz.TimTerm.commands.Steam
+go net.syntaxblitz.TimTerm.commands.Steam
+l4d2 net.syntaxblitz.TimTerm.commands.Steam
