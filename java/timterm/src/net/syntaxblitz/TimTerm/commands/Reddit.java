@@ -7,7 +7,7 @@ import net.syntaxblitz.TimTerm.URLOpener;
 public class Reddit implements Command {
 
 	@Override
-	public void execute(List<String> flags, List<String> arguments) {
+	public void execute(String command, List<String> flags, List<String> arguments) {
 		String url = "http://reddit.com/";
 		if(arguments.size() > 0) {
 			url += "r/" + arguments.get(0);

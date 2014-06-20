@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface Command {
 
-	void execute(List<String> flags, List<String> arguments);
+	void execute(String command, List<String> flags, List<String> arguments);
 
 }

@@ -7,7 +7,7 @@ import java.util.List;
 public class RuneScape implements Command {
 
 	@Override
-	public void execute(List<String> flags, List<String> arguments) {
+	public void execute(String command, List<String> flags, List<String> arguments) {
 		String dir = "C:\\Users\\Timothy\\jagexcache\\jagexlauncher\\bin\\";
 		String pathToExec = "C:\\Users\\Timothy\\jagexcache\\jagexlauncher\\bin\\JagexLauncher.exe";
 		String execArg = "oldschool";

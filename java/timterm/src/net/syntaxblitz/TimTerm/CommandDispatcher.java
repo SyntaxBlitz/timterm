@@ -27,7 +27,7 @@ public class CommandDispatcher {
 				
 				if(command.equalsIgnoreCase(bits[0])) {
 					String classPath = bits[1];
-					CommandDispatcher.loadClass(classPath, flags, arguments);
+					CommandDispatcher.loadClass(command, classPath, flags, arguments);
 					return;
 				}
 			}
@@ -48,12 +48,12 @@ public class CommandDispatcher {
 		
 	}
 
-	private static void loadClass(String fqn, List<String> flags, List<String> arguments) {
+	private static void loadClass(String command, String fqn, List<String> flags, List<String> arguments) {
 		// fqn stands for fully-qualified name
 		try {
 			Class<?> cmdClass = Class.forName(fqn);
 			Command cmd = (Command) cmdClass.newInstance();
-			cmd.execute(flags, arguments);
+			cmd.execute(command, flags, arguments);
 		} catch (ClassNotFoundException e) {
 			System.out.println("Malformed configuration");
 			return;

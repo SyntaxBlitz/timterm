@@ -12,7 +12,7 @@ public class Search implements Command {
 	protected String delimiter = "%20";
 	
 	@Override
-	public void execute(List<String> flags, List<String> arguments) {
+	public void execute(String command, List<String> flags, List<String> arguments) {
 		StringBuilder queryBuilder = new StringBuilder();
 		for(String s: arguments) {
 			queryBuilder.append(s);
