@@ -1,5 +1,7 @@
 package net.syntaxblitz.TimTerm.commands;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.List;
 
 import net.syntaxblitz.TimTerm.URLOpener;
@@ -19,6 +21,13 @@ public class Search implements Command {
 		String query = queryBuilder.toString();
 		if(query.endsWith(" ")) {
 			query = query.substring(0, query.length() - 1);
+		}
+		
+		try {
+			query = URLEncoder.encode(query, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// whatevs
+			e.printStackTrace();
 		}
 		
 		URLOpener.openURL(this.getURI(query, flags));
