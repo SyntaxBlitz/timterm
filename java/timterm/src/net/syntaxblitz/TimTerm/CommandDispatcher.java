@@ -14,24 +14,25 @@ public class CommandDispatcher {
 
 	public static void dispatch(String command, List<String> flags, List<String> arguments) {
 		// First load the configuration file with the command aliases.
-		InputStream configStream = CommandDispatcher.class.getClassLoader().getResourceAsStream("net/syntaxblitz/TimTerm/commands/commands.txt");
+		InputStream configStream = CommandDispatcher.class.getClassLoader().getResourceAsStream(
+				"net/syntaxblitz/TimTerm/commands/commands.txt");
 		try {
 			BufferedReader configReader = new BufferedReader(new InputStreamReader(configStream, "UTF-8"));
 			String nextLine = "";
-			while((nextLine = configReader.readLine()) != null) {
+			while ((nextLine = configReader.readLine()) != null) {
 				String[] bits = nextLine.split(" ");
-				if(bits.length != 2) {
+				if (bits.length != 2) {
 					System.out.println("Malformed configuration");
 					return;
 				}
-				
-				if(command.equalsIgnoreCase(bits[0])) {
+
+				if (command.equalsIgnoreCase(bits[0])) {
 					String classPath = bits[1];
 					CommandDispatcher.loadClass(command, classPath, flags, arguments);
 					return;
 				}
 			}
-			
+
 			// Didn't return.
 			// We don't have a very good way of telling the user about this sort of thing, so we'll just do nothing.
 			System.out.println("Command not found");
@@ -45,7 +46,7 @@ public class CommandDispatcher {
 			System.out.println("Couldn't read configuration - does the file exist?");
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	private static void loadClass(String command, String fqn, List<String> flags, List<String> arguments) {

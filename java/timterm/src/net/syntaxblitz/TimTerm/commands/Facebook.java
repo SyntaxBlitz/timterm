@@ -9,7 +9,7 @@ public class Facebook implements Command {
 	@Override
 	public void execute(String command, List<String> flags, List<String> arguments) {
 		String url = "https://facebook.com/";
-		if(flags.contains("i") || flags.contains("-http") || flags.contains("-insecure")) {
+		if (flags.contains("i") || flags.contains("-http") || flags.contains("-insecure")) {
 			url = "http://facebook.com/";
 		}
 		URLOpener.openURL(url);

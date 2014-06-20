@@ -9,7 +9,7 @@ public class ServerThread extends Thread {
 	public void run() {
 		try {
 			ServerSocket serverSocket = new ServerSocket(TimTerm.PORT);
-			while(true) {
+			while (true) {
 				Socket clientSocket = serverSocket.accept();
 				clientSocket.close();
 				TimTerm.gotConnection();

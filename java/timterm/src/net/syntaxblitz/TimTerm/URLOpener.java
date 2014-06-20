@@ -16,5 +16,5 @@ public class URLOpener {
 			e.printStackTrace();
 		}
 	}
-	
+
 }
