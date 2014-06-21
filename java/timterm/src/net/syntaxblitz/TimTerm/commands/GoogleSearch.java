@@ -10,10 +10,8 @@ public class GoogleSearch extends Search {
 			this.searchURI = "https://www.google.com/search?q=%S&tbm=isch";
 		} else if (flags.contains("-ngram") || flags.contains("-ngrams")) {
 			this.searchURI = "http://books.google.com/ngrams/graph?content=%S";
-			this.delimiter = "+";
 		} else if (flags.contains("-books") || flags.contains("b")) {
 			this.searchURI = "https://www.google.com/search?q=%S&tbm=bks&tbo=1";
-			this.delimiter = "+";
 		} else if (flags.contains("l") || flags.contains("-ifm") || flags.contains("-feelinglucky")
 				|| flags.contains("-lucky")) {
 			this.searchURI = "https://www.google.com/search?q=%S&btnI=I%27m+Feeling+Lucky";
@@ -33,7 +31,7 @@ public class GoogleSearch extends Search {
 				return "https://mail.google.com/";
 			}
 		}
-		return this.searchURI.replace("%S", query).replaceAll(" ", this.delimiter);
+		return this.searchURI.replace("%S", query);
 	}
 
 }

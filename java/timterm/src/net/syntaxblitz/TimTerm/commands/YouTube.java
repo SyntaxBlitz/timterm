@@ -11,13 +11,11 @@ public class YouTube extends Search {
 			url = "http://youtube.com/";
 		}
 
-		this.delimiter = "+";
-
 		if (!query.equals("")) {
 			if (flags.contains("v") || flags.contains("-id")) {
-				url += "watch?v=" + query.replaceAll(" ", this.delimiter);
+				url += "watch?v=" + query;
 			} else {
-				url += "results?search_query=" + query.replaceAll(" ", this.delimiter);
+				url += "results?search_query=" + query;
 			}
 		}
 		return url;
