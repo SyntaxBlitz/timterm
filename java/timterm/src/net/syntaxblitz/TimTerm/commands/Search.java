@@ -22,11 +22,13 @@ public class Search implements Command {
 			query = query.substring(0, query.length() - 1);
 		}
 
-		try {
-			query = URLEncoder.encode(query, "UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// whatevs
-			e.printStackTrace();
+		if (getShouldEncode()) {
+			try {
+				query = URLEncoder.encode(query, "UTF-8");
+			} catch (UnsupportedEncodingException e) {
+				// whatevs
+				e.printStackTrace();
+			}
 		}
 
 		URLOpener.openURL(this.getURI(query, flags));
@@ -34,6 +36,10 @@ public class Search implements Command {
 
 	protected String getURI(String query, List<String> flags) {
 		return searchURI.replace("%S", query);
+	}
+
+	protected boolean getShouldEncode() {
+		return true;
 	}
 
 }
