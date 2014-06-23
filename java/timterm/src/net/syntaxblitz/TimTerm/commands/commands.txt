@@ -22,3 +22,4 @@ csgo net.syntaxblitz.TimTerm.commands.Steam
 go net.syntaxblitz.TimTerm.commands.Steam
 l4d2 net.syntaxblitz.TimTerm.commands.Steam
 whois net.syntaxblitz.TimTerm.commands.Whois
+github net.syntaxblitz.TimTerm.commands.GitHub
